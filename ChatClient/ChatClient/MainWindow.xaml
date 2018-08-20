@@ -1,0 +1,56 @@
+﻿<Window x:Class="ChatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="178*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Name:" DockPanel.Dock="Left"/>
+            <TextBox Name="txtName" TextChanged="txtName_TextChanged"/>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="2">
+            <Button Content="Leave" Name="btnLeave" Click="btnLeave_Click"  HorizontalAlignment="Stretch" DockPanel.Dock="Right"/>
+            <Button Content="Join" Name="btnJoin" Click="btnJoin_Click" DockPanel.Dock="Left"/>
+        </DockPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Send Message"/>
+            <TextBox Name="txtMessageOutbound"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Height="32">
+            <Button Name="btnSend" Content="Send" Click="btnSend_Click"/>
+        </StackPanel>
+        
+        <ScrollViewer  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBox Name="txtMessageLog" IsEnabled="False" />
+        </ScrollViewer>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" VerticalAlignment="Bottom" Height="32">
+            <Button Content="Exit" Name="btnExit" Click="btnExit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

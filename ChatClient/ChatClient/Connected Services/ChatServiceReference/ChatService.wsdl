@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="ChatService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="ChatService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="ChatService/Imports">
+      <xsd:import namespace="ChatService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ChatServiceLib_JoinTheConversation_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinTheConversation" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_JoinTheConversation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinTheConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_ReceiveMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveMessage" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_LeaveTheConversation_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveTheConversation" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_LeaveTheConversation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveTheConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_NotifyUserJoinedTheConversation_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyUserJoinedTheConversation" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_NotifyUserOfMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyUserOfMessage" />
+  </wsdl:message>
+  <wsdl:message name="ChatServiceLib_NotifyUserLeftTheConversation_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyUserLeftTheConversation" />
+  </wsdl:message>
+  <wsdl:portType name="ChatServiceLib">
+    <wsdl:operation name="JoinTheConversation">
+      <wsdl:input wsaw:Action="ChatService/ChatServiceLib/JoinTheConversation" message="tns:ChatServiceLib_JoinTheConversation_InputMessage" />
+      <wsdl:output wsaw:Action="ChatService/ChatServiceLib/JoinTheConversationResponse" message="tns:ChatServiceLib_JoinTheConversation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveMessage">
+      <wsdl:input wsaw:Action="ChatService/ChatServiceLib/ReceiveMessage" message="tns:ChatServiceLib_ReceiveMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveTheConversation">
+      <wsdl:input wsaw:Action="ChatService/ChatServiceLib/LeaveTheConversation" message="tns:ChatServiceLib_LeaveTheConversation_InputMessage" />
+      <wsdl:output wsaw:Action="ChatService/ChatServiceLib/LeaveTheConversationResponse" message="tns:ChatServiceLib_LeaveTheConversation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyUserJoinedTheConversation">
+      <wsdl:output wsaw:Action="ChatService/ChatServiceLib/NotifyUserJoinedTheConversation" message="tns:ChatServiceLib_NotifyUserJoinedTheConversation_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyUserOfMessage">
+      <wsdl:output wsaw:Action="ChatService/ChatServiceLib/NotifyUserOfMessage" message="tns:ChatServiceLib_NotifyUserOfMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyUserLeftTheConversation">
+      <wsdl:output wsaw:Action="ChatService/ChatServiceLib/NotifyUserLeftTheConversation" message="tns:ChatServiceLib_NotifyUserLeftTheConversation_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

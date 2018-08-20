@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af5bd69d-ff58-4cd9-a601-e3541a5c117e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/ChatService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ChatService.wsdl" MetadataType="Wsdl" ID="7c573a6a-1a29-4529-bc12-4dcfc051762b" SourceId="1" SourceUrl="http://localhost:8080/ChatService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0f948a82-8116-4232-b387-8f2553ee8472" SourceId="1" SourceUrl="http://localhost:8080/ChatService/mex" />
+    <MetadataFile FileName="ChatService.xsd" MetadataType="Schema" ID="08398788-ef36-4bf1-bedd-622ba2789583" SourceId="1" SourceUrl="http://localhost:8080/ChatService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0b8bf1e4-ff7e-48e5-be3a-c2d991d99640" SourceId="1" SourceUrl="http://localhost:8080/ChatService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="bdfd6351-e148-4ad0-b09e-74a8c0eeaf33" SourceId="1" SourceUrl="http://localhost:8080/ChatService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
